@@ -17,8 +17,14 @@ setup(
     author_email='ivan.dmitrievsky+opensource@gmail.com',
     url='https://gitlab.com/idmit/popsim',
     install_requires=[
-
+        'click',
+        'numpy'
     ],
+    entry_points={
+        'console_scripts': [
+            'popsim=popsim.core:root'
+        ]
+    },
     license=license_,
     packages=find_packages(exclude=('tests', 'docs'))
 )
