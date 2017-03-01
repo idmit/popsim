@@ -1,0 +1,1 @@
+-e git+ssh://git@gitlab.com/idmit/popsim.git#egg=popsim
