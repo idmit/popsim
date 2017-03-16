@@ -19,11 +19,11 @@ def init_snp_trace(dir_path, ind, nb_snp):
 
 def get_snp_trace(dir_path, ind):
     with open(snp_trace_path(dir_path, ind), 'r') as sf:
-        return [list(x) for x in zip(*[line.rstrip().split() for line in sf])]
+        return list(zip(*[line.rstrip().split() for line in sf]))
 
 
 def attach_snp_trace(chrome_pair, wd_path, ind):
     chrome_a, chrome_b = chrome_pair
     snp_trace_a, snp_trace_b = get_snp_trace(wd_path, ind)
 
-    return [list(x) for x in [zip(chrome_a, snp_trace_a), zip(chrome_b, snp_trace_b)]]
+    return list(zip(chrome_a, snp_trace_a)), list(zip(chrome_b, snp_trace_b))
